@@ -231,11 +231,36 @@ export default function ReturnAnalyticsPage() {
 
   // Store performance data
   const storePerformance = [
-    { name: "New York - Main Street", returns: 15, returnRate: 2.1, fraudAttempts: 3 },
-    { name: "Brooklyn - Atlantic Ave", returns: 8, returnRate: 1.8, fraudAttempts: 1 },
-    { name: "Queens - Northern Blvd", returns: 12, returnRate: 3.2, fraudAttempts: 4 },
-    { name: "Manhattan - 5th Avenue", returns: 10, returnRate: 1.5, fraudAttempts: 0 },
-    { name: "Bronx - Fordham Road", returns: 7, returnRate: 2.8, fraudAttempts: 2 },
+    {
+      name: "New York - Main Street",
+      returns: 15,
+      returnRate: 2.1,
+      fraudAttempts: 3,
+    },
+    {
+      name: "Brooklyn - Atlantic Ave",
+      returns: 8,
+      returnRate: 1.8,
+      fraudAttempts: 1,
+    },
+    {
+      name: "Queens - Northern Blvd",
+      returns: 12,
+      returnRate: 3.2,
+      fraudAttempts: 4,
+    },
+    {
+      name: "Manhattan - 5th Avenue",
+      returns: 10,
+      returnRate: 1.5,
+      fraudAttempts: 0,
+    },
+    {
+      name: "Bronx - Fordham Road",
+      returns: 7,
+      returnRate: 2.8,
+      fraudAttempts: 2,
+    },
   ];
 
   useEffect(() => {
@@ -303,14 +328,20 @@ export default function ReturnAnalyticsPage() {
     <DashboardLayout>
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Return Analytics</h1>
-          <p className="text-muted-foreground">Monitor and analyze product returns across your retail locations</p>
+          <h1 className="text-3xl font-bold tracking-tight">
+            Return Analytics
+          </h1>
+          <p className="text-muted-foreground">
+            Monitor and analyze product returns across your retail locations
+          </p>
         </div>
-        
+
         <div className="grid gap-6 md:grid-cols-4">
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Total Returns</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                Total Returns
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">37</div>
@@ -319,7 +350,9 @@ export default function ReturnAnalyticsPage() {
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Defective Items</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                Defective Items
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">28</div>
@@ -332,20 +365,26 @@ export default function ReturnAnalyticsPage() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">2.3%</div>
-              <p className="text-xs text-muted-foreground">-0.5% from last month</p>
+              <p className="text-xs text-muted-foreground">
+                -0.5% from last month
+              </p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Potential Issues</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                Potential Issues
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">5</div>
-              <p className="text-xs text-muted-foreground">Requiring attention</p>
+              <p className="text-xs text-muted-foreground">
+                Requiring attention
+              </p>
             </CardContent>
           </Card>
         </div>
-        
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-7">
           <Card className="col-span-4">
             <CardHeader>
@@ -354,11 +393,13 @@ export default function ReturnAnalyticsPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[300px] flex items-center justify-center border rounded bg-muted/20">
-                <p className="text-muted-foreground">Chart visualization would appear here</p>
+                <p className="text-muted-foreground">
+                  Chart visualization would appear here
+                </p>
               </div>
             </CardContent>
           </Card>
-          
+
           <Card className="col-span-3">
             <CardHeader>
               <CardTitle>Return Reasons</CardTitle>
@@ -369,7 +410,9 @@ export default function ReturnAnalyticsPage() {
                 {reasonsSummary.map((reason) => (
                   <div key={reason.reason} className="flex items-center">
                     <div className="w-1/3">
-                      <span className="text-sm font-medium">{reason.reason}</span>
+                      <span className="text-sm font-medium">
+                        {reason.reason}
+                      </span>
                     </div>
                     <div className="w-2/3 flex items-center gap-2">
                       <div className="flex-1 bg-muted rounded-full h-2 overflow-hidden">
@@ -388,13 +431,15 @@ export default function ReturnAnalyticsPage() {
             </CardContent>
           </Card>
         </div>
-        
+
         <Card>
           <CardHeader>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <CardTitle>Product Returns</CardTitle>
-                <CardDescription>Detailed list of returned items</CardDescription>
+                <CardDescription>
+                  Detailed list of returned items
+                </CardDescription>
               </div>
               <div className="flex items-center gap-2">
                 <div className="relative">
@@ -417,14 +462,20 @@ export default function ReturnAnalyticsPage() {
             </div>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab}>
+            <Tabs
+              defaultValue="all"
+              value={activeTab}
+              onValueChange={setActiveTab}
+            >
               <TabsList className="mb-4">
                 <TabsTrigger value="all">All Returns</TabsTrigger>
                 <TabsTrigger value="defective">Defective</TabsTrigger>
                 <TabsTrigger value="size">Size Issues</TabsTrigger>
-                <TabsTrigger value="dissatisfaction">Dissatisfaction</TabsTrigger>
+                <TabsTrigger value="dissatisfaction">
+                  Dissatisfaction
+                </TabsTrigger>
               </TabsList>
-              
+
               <div className="rounded-md border">
                 <Table>
                   <TableHeader>
@@ -469,7 +520,9 @@ export default function ReturnAnalyticsPage() {
                       <TableRow key={item.id}>
                         <TableCell>
                           <div className="font-medium">{item.name}</div>
-                          <div className="text-sm text-muted-foreground">{item.sku}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {item.sku}
+                          </div>
                         </TableCell>
                         <TableCell>{formatDate(item.returnDate)}</TableCell>
                         <TableCell>
@@ -479,10 +532,10 @@ export default function ReturnAnalyticsPage() {
                               item.reason === "Defective"
                                 ? "bg-red-100 text-red-800 border-red-200"
                                 : item.reason === "Wrong Size"
-                                ? "bg-amber-100 text-amber-800 border-amber-200"
-                                : item.reason === "Wrong Item"
-                                ? "bg-blue-100 text-blue-800 border-blue-200"
-                                : "bg-green-100 text-green-800 border-green-200"
+                                  ? "bg-amber-100 text-amber-800 border-amber-200"
+                                  : item.reason === "Wrong Item"
+                                    ? "bg-blue-100 text-blue-800 border-blue-200"
+                                    : "bg-green-100 text-green-800 border-green-200"
                             }
                           >
                             {item.reason}
@@ -521,12 +574,14 @@ export default function ReturnAnalyticsPage() {
             </Tabs>
           </CardContent>
         </Card>
-        
+
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>AI Insights</CardTitle>
-              <CardDescription>Automated analysis of return patterns</CardDescription>
+              <CardDescription>
+                Automated analysis of return patterns
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -545,17 +600,23 @@ export default function ReturnAnalyticsPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold text-sm">{insight.name}</h4>
-                        <span className="text-xs text-muted-foreground">{insight.sku}</span>
+                        <h4 className="font-semibold text-sm">
+                          {insight.name}
+                        </h4>
+                        <span className="text-xs text-muted-foreground">
+                          {insight.sku}
+                        </span>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">{insight.message}</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {insight.message}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardHeader>
               <CardTitle>Store Performance</CardTitle>
@@ -564,7 +625,10 @@ export default function ReturnAnalyticsPage() {
             <CardContent>
               <div className="space-y-4">
                 {storePerformance.map((store, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between p-3 border rounded-lg"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
                         <Store className="h-4 w-4 text-primary" />
@@ -583,8 +647,8 @@ export default function ReturnAnalyticsPage() {
                           store.fraudAttempts > 3
                             ? "bg-red-100 text-red-800 border-red-200"
                             : store.fraudAttempts > 0
-                            ? "bg-amber-100 text-amber-800 border-amber-200"
-                            : "bg-green-100 text-green-800 border-green-200"
+                              ? "bg-amber-100 text-amber-800 border-amber-200"
+                              : "bg-green-100 text-green-800 border-green-200"
                         }
                       >
                         {store.fraudAttempts} fraud attempts
@@ -599,3 +663,4 @@ export default function ReturnAnalyticsPage() {
       </div>
     </DashboardLayout>
   );
+}
